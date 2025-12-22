@@ -1,5 +1,5 @@
 # import the Flask class from flask module
-import flask import Flask
+from flask import Flask, jsonify
 
 # create an instance of the flask class, by passing in name of module
 app = Flask(__name__)
@@ -7,6 +7,6 @@ app = Flask(__name__)
 # define a route for the root URL ('/')
 @app.route('/')
 
-# create function that handles the url reque
+# create function that handles the url request
 def hello_world():
-    return 'hello world'
+    return {"message": "Hello World"}
