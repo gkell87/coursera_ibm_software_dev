@@ -1,4 +1,34 @@
 from Maths.mathematics import sum, diff, mult
 from flask import Flask, render_template, request
 
-# for end-point /, implement a method that renders the index.html
+app = Flask('Mathematics Problem Solver')
+
+@app.route('/sum')
+def sum_route():
+    num1 = float(request.args.get('num1'))
+    num2 = float(request.args.get('num2'))
+    result = sum(num1, num2)
+    if result.is_integer():
+        result = int(result)
+    return str(result)
+
+@app.route('/sub')
+def sum_route():
+    num1 = float(request.args.get('num1'))
+    num2 = float(request.args.get('num2'))
+    result = diff(num1, num2)
+    if result.is_integer():
+        result = int(result)
+    return str(result)
+
+@app.route('/mul')
+def sum_route():
+    num1 = float(request.args.get('num1'))
+    num2 = float(request.args.get('num2'))
+    result = mult(num1, num2)
+    if result.is_integer():
+        result = int(result)
+    return str(result)
+
+if __name__ == '__main__':
+    app.run(host = '0.0.0.0', port = 8080)
