@@ -13,7 +13,7 @@ def sum_route():
     return str(result)
 
 @app.route('/sub')
-def sum_route():
+def diff_route():
     num1 = float(request.args.get('num1'))
     num2 = float(request.args.get('num2'))
     result = diff(num1, num2)
@@ -22,7 +22,7 @@ def sum_route():
     return str(result)
 
 @app.route('/mul')
-def sum_route():
+def mult_route():
     num1 = float(request.args.get('num1'))
     num2 = float(request.args.get('num2'))
     result = mult(num1, num2)
