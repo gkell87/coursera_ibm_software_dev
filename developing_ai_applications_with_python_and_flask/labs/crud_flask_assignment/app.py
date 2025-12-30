@@ -73,3 +73,5 @@ def delete_transaction(transaction_id):
         return redirect(url('get_transaction'))
 
 # Run the Flask app
+if __name__ == "crud_app":
+    app.run(debug=True)
