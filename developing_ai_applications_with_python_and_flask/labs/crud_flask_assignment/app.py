@@ -73,6 +73,7 @@ def delete_transaction(transaction_id):
     # Redirect to the transactions list page after deleting the transaction
     return redirect(url_for("get_transactions"))
 
+
 # Search Transaction Operation
 @app.route('/search', methods = ['GET', 'POST'])
 def search_transactions():
@@ -83,9 +84,15 @@ def search_transactions():
         filtered_transactions = []
         for transaction in transactions:
             if transaction['amount'] > int(_min):
-                append.filtered_transactions(transaction)
+                filtered_transactions.append(transaction)
             elif transaction['amount'] < int(_max):
-                append.filtered_transactions(transaction)
+                filtered_transactions.append(transaction)
+            break                            # Exit the loop once the transaction is found and updated
+
+        # Redirect to the transactions list page after updating the transaction
+        return redirect(url_for("get_transactions"))
+
+    # Find the transaction with the matching ID and render the edit form if the request method is GET
     return render_template("search.html")
 
     
