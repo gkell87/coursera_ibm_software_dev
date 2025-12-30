@@ -80,12 +80,12 @@ def delete_transaction(transaction_id):
 
 # Search Transaction Operation
 @app.route('/search', methods = ['GET', 'POST'])
-def search_transactions():
+_min = float(request.form['min_amount'])
+_max = float(request.form['max_amount'])
+filtered_transactions = []
+def search_transactions(_min, _max):
     if request.method == 'POST':
         # Extract the updated values from the form fields
-        _min = float(request.form['min_amount'])
-        _max = float(request.form['max_amount'])
-        filtered_transactions = []
         for transaction in transactions:
             if float(transaction['amount']) > float(_min):
                 filtered_transactions.append(transaction)
