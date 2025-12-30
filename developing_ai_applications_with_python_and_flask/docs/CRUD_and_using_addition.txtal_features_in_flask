@@ -4,7 +4,8 @@ To effectively implement the CRUD operations, you will need to manage different 
 A GET request is generally used to retrieve or read data and is often used to display a form. A POST request is commonly used to send data to create or update data. 
 An example of a POST request is form submission.
 
-This reading aims to introduce you to additional features of Flask, focusing on the CRUD functions. You will also learn how these functions are interrelated and how they utilize the different HTML files, dynamic routes, and various HTTP methods.
+This reading aims to introduce you to additional features of Flask, focusing on the CRUD functions. 
+You will also learn how these functions are interrelated and how they utilize the different HTML files, dynamic routes, and various HTTP methods.
 
 Objectives
 In this reading, you will:
@@ -38,7 +39,9 @@ def login():
     # process login here
 
 Redirecting to a URL with flask.redirect
-Flask provides a function called flask.redirect to guide users to a different webpages (or endpoints). The flask.redirect function can be useful in several scenarios. For example, you can use the flask.redirect function to redirect a user to a login page when they try to access a restricted admin page.
+Flask provides a function called flask.redirect to guide users to a different webpages (or endpoints). 
+The flask.redirect function can be useful in several scenarios. 
+For example, you can use the flask.redirect function to redirect a user to a login page when they try to access a restricted admin page.
 
 Python code:
 
@@ -48,7 +51,11 @@ def admin():
     return redirect('/login')
 
 Generating Dynamic URLs with flask.url_for
-The flask.url_for function dynamically generates URLs for a given endpoint. Dynamically generating URLs can be particularly useful when the URL for a route is altered. The flask.url_for function automatically updates the URL throughout your templates or code, minimizing manual work. For example, consider the scenario where a user is trying to access the admin page and must be redirected to the login page. In this scenario, url_for('login') will retrieve the URL for the login page from the existing routes.
+The flask.url_for function dynamically generates URLs for a given endpoint. 
+Dynamically generating URLs can be particularly useful when the URL for a route is altered. 
+The flask.url_for function automatically updates the URL throughout your templates or code, minimizing manual work. 
+For example, consider the scenario where a user is trying to access the admin page and must be redirected to the login page. 
+In this scenario, url_for('login') will retrieve the URL for the login page from the existing routes.
 
 Python code:
 
@@ -61,7 +68,8 @@ def login():
     return "<Login Page>"
 
 Handling different HTTP request types
-Flask allows you to define routes to manage different types of HTTP requests. You can define the route with both the access methods, GET and POST, and in the function description, define the use cases for both methods.
+Flask allows you to define routes to manage different types of HTTP requests. 
+You can define the route with both the access methods, GET and POST, and in the function description, define the use cases for both methods.
 
 Python code:
 
@@ -85,10 +93,12 @@ In the HTML file, you will add a form that allows both GET and POST requests:
 In the last example, the /data route accepts both GET and POST requests. The type of the request can be checked using flask.request.method.
 
 CRUD operations
-The CRUD operations represent the four basic functions that you require to interact with any persistent storage, such as a database. In web development, the CRUD operations often correspond to HTTP methods.
+The CRUD operations represent the four basic functions that you require to interact with any persistent storage, such as a database. 
+In web development, the CRUD operations often correspond to HTTP methods.
 
 Create operation
-Creating data often involves presenting a form to the user to gather the information that you want to store in the database as a new record. In Flask, this data is accessed using flask.request.form.
+Creating data often involves presenting a form to the user to gather the information that you want to store in the database as a new record. 
+In Flask, this data is accessed using flask.request.form.
 
 HTML form for creating data:
 
@@ -112,7 +122,10 @@ def create():
     return render_template('create.html')
 
 Read operation
-Reading data involves accessing the data and presenting it to the user. To access specific entries, the request needs to go with specific IDs. Therefore, you will need to pass the ID as an argument to the function. The following example shows that the ID can be accessed from the route.
+Reading data involves accessing the data and presenting it to the user. 
+To access specific entries, the request needs to go with specific IDs. 
+Therefore, you will need to pass the ID as an argument to the function. 
+The following example shows that the ID can be accessed from the route.
 
 Python code:
 
@@ -123,11 +136,9 @@ def read(id):
     # Render a template with the record
     return render_template('read.html', record=record)
 
-Copied!
-
-Wrap Toggled!
 Update operation
-Updating data requires the process of accessing specific entries, like the Read operation, and involves giving new data to the concerned parameter, like the Create operation. Therefore, the route should access the ID and contain both access methods.
+Updating data requires the process of accessing specific entries, like the Read operation, and involves giving new data to the concerned parameter, like the Create operation. 
+Therefore, the route should access the ID and contain both access methods.
 
 Sample HTML form for updating data:
 
@@ -153,7 +164,8 @@ def update(id):
     return render_template('update.html', record=record)
 
 Delete operation
-Deleting data involves removing a record based on its ID. The Delete operation will typically require the ID to be passed, as reported by the HTML page, in the form of an argument to the function.
+Deleting data involves removing a record based on its ID. 
+The Delete operation will typically require the ID to be passed, as reported by the HTML page, in the form of an argument to the function.
 
 Sample HTML form for deleting data:
 
