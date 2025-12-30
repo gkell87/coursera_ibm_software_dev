@@ -91,7 +91,6 @@ def search_transactions():
                 filtered_transactions.append(transaction)
             elif float(transaction['amount']) > float(_max):
                 filtered_transactions.append(transaction)
-            break                            # Exit the loop once the transaction is found and updated
 
         # Redirect to the transactions list page after updating the transaction
         return render_template('transactions.html', transactions = filtered_transactions)
