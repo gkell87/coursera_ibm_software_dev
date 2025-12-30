@@ -36,7 +36,7 @@ def add_transaction():
     return render_template("form.html")
 
 # Update operation
-@app.route('/edit/<int:transaction_id', methods = ['GET', 'POST'])
+@app.route('/edit/<int:transaction_id>', methods = ['GET', 'POST'])
 def edit_transaction(transaction_id):
     if request.method == 'POST':
         date = reqeust.form['date']            # Get the 'date' field value from the form
