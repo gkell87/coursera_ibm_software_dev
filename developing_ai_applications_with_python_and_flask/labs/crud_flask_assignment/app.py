@@ -75,9 +75,18 @@ def delete_transaction(transaction_id):
 
 # Search Transaction Operation
 @app.route('/search', methods = ['GET', 'POST'])
-def search_transactions():
-    return('search.html')
-
+def search_transactions(_min, _max):
+    if request.method == 'POST':
+        # Extract the updated values from the form fields
+        _min = request.form['min_amount']
+        _max = request.form['max_amount']
+        transactions = []
+        for transaction in transactions:
+            if transaction['amoount'] > _min:
+                append.transactions(transaction)
+            elif transaction['amoount'] < _max:
+                append.transactions(transaction)
+    return redirect(url_for("get_transactions"))
 
 
 # Run the Flask application
