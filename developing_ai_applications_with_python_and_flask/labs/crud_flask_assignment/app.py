@@ -63,5 +63,13 @@ def edit_transaction(transaction_id):
 
 
 # Delete operation
+@app.route('/delete/<int:transaction_id')
+def delete_transaction(transaction_id):
+        for transaction in transactions:
+            if transaction['id'] == transaction_id:
+                transactions.remove(transaction):
+                break
+
+        return redirect(url('get_transaction'))
 
 # Run the Flask app
