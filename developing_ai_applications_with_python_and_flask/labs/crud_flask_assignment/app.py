@@ -11,6 +11,10 @@ transactions = [
     {'id': 3, 'date': '2023-06-03', 'amount': 300}
 ]
 
+filtered_transactions = [
+    {'id': 1, 'date': '2023-06-01', 'amount': 100}
+]
+
 # Read operation: Route to list all transactions
 @app.route("/")
 def get_transactions():
@@ -79,19 +83,19 @@ def delete_transaction(transaction_id):
 def search_transactions():
     if request.method == 'POST':
         # Extract the updated values from the form fields
-        _min = request.form['min_amount']
-        _max = request.form['max_amount']
+        _min = float(request.form['min_amount'])
+        _max = float(request.form['max_amount'])
         filtered_transactions = []
         for transaction in transactions:
-            if transaction['amount'] < float(_min):
+            if float(transaction['amount']) > float(_min):
                 filtered_transactions.append(transaction)
-            elif transaction['amount'] > float(_max):
+            elif float(transaction['amount']) < float(_max):
                 filtered_transactions.append(transaction)
             break                            # Exit the loop once the transaction is found and updated
 
         # Redirect to the transactions list page after updating the transaction
         for transaction in filtered_transactions:
-            return render_template('transactions.html', transaction = transaction)
+            return render_template('transactions.html', transactions = filtered_transactions)
 
     # Find the transaction with the matching ID and render the edit form if the request method is GET
     return render_template("search.html")
