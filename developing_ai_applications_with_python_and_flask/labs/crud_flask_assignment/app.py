@@ -82,13 +82,12 @@ def search_transactions():
         _max = request.form['max_amount']
         filtered_transactions = []
         for transaction in transactions:
-            if transaction['amoount'] > _min:
+            if transaction['amount'] > int(_min):
                 append.filtered_transactions(transaction)
-            elif transaction['amoount'] < _max:
+            elif transaction['amount'] < int(_max):
                 append.filtered_transactions(transaction)
-        return render_template("search.html")
-    else:
-        return redirect(url_for("search.html"))
+    return render_template("search.html")
+
     
     
 
