@@ -18,7 +18,7 @@ def get_transactions():
 
 # Create operation
 # Route handling GET and POST
-@app.route('/add' methods = ['GET', 'POST'])
+@app.route('/add', methods = ['GET', 'POST'])
 def add_transaction():
     if request.method == 'POST':
         transaction = {
