@@ -94,8 +94,7 @@ def search_transactions():
             break                            # Exit the loop once the transaction is found and updated
 
         # Redirect to the transactions list page after updating the transaction
-        for transaction in filtered_transactions:
-            return render_template('transactions.html', transactions = filtered_transactions)
+        return render_template('transactions.html', transactions = filtered_transactions)
 
     # Find the transaction with the matching ID and render the edit form if the request method is GET
     return render_template("search.html")
