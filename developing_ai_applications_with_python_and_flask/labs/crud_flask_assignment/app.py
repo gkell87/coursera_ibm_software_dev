@@ -88,7 +88,7 @@ def search_transactions():
                 append.filtered_transactions(transaction)
         return render_template("search.html")
     else:
-        return redirect(url_for("get_transactions"))
+        return redirect(url_for("search.html"))
     
     
 
