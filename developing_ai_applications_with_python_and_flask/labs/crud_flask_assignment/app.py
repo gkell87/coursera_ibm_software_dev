@@ -81,16 +81,17 @@ def search_transactions():
         # Extract the updated values from the form fields
         _min = request.form['min_amount']
         _max = request.form['max_amount']
-        transactions = []
+        filtered_transactions = []
         for transaction in transactions:
-            if transaction['amount'] > float(_min):
-                transactions.append(transaction)
-            elif transaction['amount'] < float(_max):
-                transactions.append(transaction)
+            if transaction['amount'] < float(_min):
+                filtered_transactions.append(transaction)
+            elif transaction['amount'] > float(_max):
+                filtered_transactions.append(transaction)
             break                            # Exit the loop once the transaction is found and updated
 
         # Redirect to the transactions list page after updating the transaction
-        return render_template('transactions.html', transactions)
+        for transaction in filtered_transactions:
+            return render_template('transactions.html', transaction = transaction)
 
     # Find the transaction with the matching ID and render the edit form if the request method is GET
     return render_template("search.html")
