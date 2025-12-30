@@ -83,9 +83,9 @@ def search_transactions():
         _max = request.form['max_amount']
         filtered_transactions = []
         for transaction in transactions:
-            if transaction['amount'] > int(_min):
+            if transaction['amount'] < int(_min):
                 filtered_transactions.append(transaction)
-            elif transaction['amount'] < int(_max):
+            elif transaction['amount'] > int(_max):
                 filtered_transactions.append(transaction)
             break                            # Exit the loop once the transaction is found and updated
 
