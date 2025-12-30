@@ -81,12 +81,12 @@ def search_transactions():
         # Extract the updated values from the form fields
         _min = request.form['min_amount']
         _max = request.form['max_amount']
-        filtered_transactions = []
+        transactions = []
         for transaction in transactions:
-            if transaction['amount'] < int(_min):
-                filtered_transactions.append(transaction)
-            elif transaction['amount'] > int(_max):
-                filtered_transactions.append(transaction)
+            if transaction['amount'] > int(_min):
+                transactions.append(transaction)
+            elif transaction['amount'] < int(_max):
+                transactions.append(transaction)
             break                            # Exit the loop once the transaction is found and updated
 
         # Redirect to the transactions list page after updating the transaction
