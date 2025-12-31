@@ -9,7 +9,7 @@ app = Flask('Sentiment Analyzer')
 @app.route("/sentimentAnalyzer")
 def sent_analyzer():
     # Retrieve the text to analyze from the request arguments
-    text_to_analyze = requst.args.get('textToAnalyze')
+    text_to_analyze = request.args.get('textToAnalyze')
 
     # Pass text to function in SentimentAnalysis Module
     response = sentiment_analyzer(text_to_analyze)
