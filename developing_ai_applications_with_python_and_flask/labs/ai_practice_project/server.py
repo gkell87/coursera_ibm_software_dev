@@ -1,6 +1,6 @@
 # Import Flask, render_template, request
 from flask import Flask, request, render_template
-from SentimentAnalysis.sentiment_analysis import sentiment_analyzer
+from SentimentAnalysis.sentiment_analysis import sentiment_analyzer """analzes sentiment"""
 
 # Initiate the flask app
 app = Flask('Sentiment Analyzer')
