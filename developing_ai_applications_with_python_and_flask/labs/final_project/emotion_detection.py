@@ -12,4 +12,4 @@ def emotion_detector(text_to_analyse):
     inputJson = { "raw_document": {"text": text_to_analyse }}
 
     # Return post response
-    return requests.post(url, json = inputJson, headers = headers).json
+    return requests.post(url, json = inputJson, headers = headers).json()
