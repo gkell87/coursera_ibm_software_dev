@@ -21,6 +21,7 @@ def emotion_detector(text_to_analyse):
         if max(emotions.values()) in emo:
             dominant_emotion = list(emo)[0]
 
-    return emotions['dominant_emotion'] = dominant_emotion
+    emotions['dominant_emotion'] = dominant_emotion
+    return emotions
 
         
