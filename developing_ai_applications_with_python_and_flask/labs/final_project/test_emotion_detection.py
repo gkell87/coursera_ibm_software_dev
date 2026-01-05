@@ -4,8 +4,8 @@ import unittest
 class TestSentimentAnalyzer(unittest.TestCase):
     def test_emotion_detector(self):
         # Test case for positive sentiment
-        result_1 = emotion_detector('I am glad this happened', 'SENT_POSITIVE')
-        self.assertEqual(result_1['dominant_emotion'])
+        result_1 = emotion_detector('I am glad this happened')
+        self.assertEqual(result_1['dominant_emotion', 'SENT_POSITIVE'])
         # Test case for negative sentiment
         result_2 = emotion_detector('I am really mad about this')
         self.assertEqual(result_2['dominant_emotion'])
