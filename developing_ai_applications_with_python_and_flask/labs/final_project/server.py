@@ -1,5 +1,5 @@
-from flask import Flask, request, render_template
 """Module for emotion detection script."""
+from flask import Flask, request, render_template
 from EmotionDetection.emotion_detection import emotion_detector
 
 # Initiate the flask app
