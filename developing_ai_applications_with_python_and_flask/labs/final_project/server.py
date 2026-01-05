@@ -1,7 +1,7 @@
-# Import Flask, render_template, request
-from flask import Flask, request, render_template
 """Module for emotion detection script."""
 from EmotionDetection.emotion_detection import emotion_detector
+
+from flask import Flask, request, render_template
 
 # Initiate the flask app
 app = Flask('Emotion Detector')
@@ -21,7 +21,7 @@ def emo_analyzer():
         return 'Invalid text! Please try again!'
 
     # Return a formatted string with the Emotion, Score and Dominant Emotion
-    formatted = ','.join(f"'{k}': {v}" for k, v in list(json.items())[0:-1])
+    formatted = ','.join(f"'{k}': {v}" for k, v in list(resp.items())[0:-1])
     frst = 'For the given statement, the system response is' + formatted
     lst = '. The dominant emotion is' + resp['dominant_emotion'] + '.'
 
