@@ -15,7 +15,7 @@ def emo_analyzer():
     response = emotion_detector(text_to_analyze)
 
     # Return a formatted string with the Emotion, Score and Dominant Emotion
-    return "For the given statement, the system response is".format(response.text) 'The dominant emotion is'.format(respone['dominant_emotion'])
+    return "For the given statement, the system response is".format(response.text) 'The dominant emotion is'.format(response['dominant_emotion'])
 
 # Assign route to render the index.html in the template folder
 @app.route("/")
