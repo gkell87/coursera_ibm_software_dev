@@ -14,7 +14,11 @@ def emo_analyzer():
     text_to_analyze = request.args.get('textToAnalyze')
 
     # Pass text to function in EmotionDetection Module
-    response = emotion_detector(text_to_analyze)
+    resp = emotion_detector(text_to_analyze)
+
+    # Handle no response error
+    if resp['dominant_emotion'] is None:
+        return 'Invalid text! Please try again!'
 
     # Return a formatted string with the Emotion, Score and Dominant Emotion
     return 'For the given statement, the system response is'.format(str(response)), 'The dominant emotion is'.format(response['dominant_emotion'])

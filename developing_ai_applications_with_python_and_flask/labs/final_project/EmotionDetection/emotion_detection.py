@@ -12,10 +12,15 @@ def emotion_detector(text_to_analyse):
     inputJson = { "raw_document": {"text": text_to_analyse }}
 
     # Return post response
-    r = requests.post(url, json = inputJson, headers = headers).json()
+    r = requests.post(url, json = inputJson, headers = headers)
+
+    # Handle no input error
+    if r.status_code == 400:
+        return {"anger" : None, "disgust" : None, "fear" : None, 
+        "joy" : None, "sadness" : None, "dominant_emotion" : None}
 
     # Get dominant emotion and reformat response
-    emotions = r['emotionPredictions'][0]['emotion']
+    emotions = r.json()['emotionPredictions'][0]['emotion']
 
     for emo in emotions.items():
         if max(emotions.values()) in emo:
