@@ -21,7 +21,11 @@ def emo_analyzer():
         return 'Invalid text! Please try again!'
 
     # Return a formatted string with the Emotion, Score and Dominant Emotion
-    return 'For the given statement, the system response is'.format(str(response)), 'The dominant emotion is'.format(response['dominant_emotion'])
+    formatted = ','.join(f"'{k}': {v}" for k, v in list(json.items())[0:-1])
+    frst = 'For the given statement, the system response is' + formatted
+    lst = '. The dominant emotion is' + resp['dominant_emotion'] + '.'
+
+    return  frst + lst
 
 # Assign route to render the index.html in the template folder
 @app.route('/')
