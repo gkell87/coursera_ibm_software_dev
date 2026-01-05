@@ -1,5 +1,6 @@
 # Import Flask, render_template, request
 from flask import Flask, request, render_template
+"""Module for emotion detection script."""
 from EmotionDetection.emotion_detection import emotion_detector
 
 # Initiate the flask app
@@ -8,6 +9,7 @@ app = Flask('Emotion Detector')
 # Assign route
 @app.route('/emotionDetector')
 def emo_analyzer():
+    """Function to call emotion detector."""
     # Retrieve the text to analyze from the request arguments
     text_to_analyze = request.args.get('textToAnalyze')
 
@@ -20,6 +22,7 @@ def emo_analyzer():
 # Assign route to render the index.html in the template folder
 @app.route('/')
 def render_index_page():
+    """Function for rendering page"""
     return render_template('index.html')
 
 # Assign host to run app
