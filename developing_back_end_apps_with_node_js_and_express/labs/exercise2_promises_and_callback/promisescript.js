@@ -15,7 +15,7 @@ let myPromise2 = new Promise((resolve, reject) => {
 //Call the promise and wait for it to be resolved
 myPromise.then((successMessage) => {
     console.log('From callback ' + successMessage)
-    myPromise.then((successMessage) => {
+    myPromise2.then((successMessage) => {
         console.log('From Callback ' + successMessage)
     })
 })
