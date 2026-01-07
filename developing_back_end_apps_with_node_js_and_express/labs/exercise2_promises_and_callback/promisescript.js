@@ -5,12 +5,12 @@ let myPromise = new Promise((resolve, reject) => {
     }, 6000)
 })
 
+//Create a promise method. The promise will get resolved when the timer times out in 3 seconds
 let myPromise2 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve('Promise 2 resolved')
     }, 3000)
 })
-
 
 //Call the promise and wait for it to be resolved
 myPromise.then((successMessage) => {
