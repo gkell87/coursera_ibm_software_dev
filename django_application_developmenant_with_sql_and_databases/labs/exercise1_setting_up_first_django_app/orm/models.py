@@ -6,7 +6,7 @@ class User(models.Model):
     first_name = models.CharField(null = False, max_length = 30, default = 'John')
     
     # Charfield for last name
-    last_name =  models.CharField(null = False, max_length = 30, defualt = 'Doe')
+    last_name =  models.CharField(null = False, max_length = 30, default = 'Doe')
 
     # Charfield for DOB
     dob = models.DataField(null = True)
