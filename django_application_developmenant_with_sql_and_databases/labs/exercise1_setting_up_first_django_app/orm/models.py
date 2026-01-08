@@ -9,4 +9,4 @@ class User(models.Model):
     last_name =  models.CharField(null = False, max_length = 30, default = 'Doe')
 
     # Charfield for DOB
-    dob = models.DataField(null = True)
+    dob = models.DateField(null = True)
