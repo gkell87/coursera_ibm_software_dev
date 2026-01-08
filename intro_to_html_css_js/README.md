@@ -45,3 +45,8 @@ Key characteristics and uses of JavaScript include:
  - Versatility: Beyond web development, JavaScript is used in various other domains, including mobile app development (with frameworks like React Native) and desktop applications.
  - Dynamic and Interpreted: It is a dynamic language, meaning variable types are determined at runtime, and it is typically interpreted or just-in-time compiled rather than fully compiled before execution.
  - Multi-Paradigm: JavaScript supports multiple programming paradigms, including imperative, functional, and object-oriented programming (using prototypes and classes).
+
+
+ TO RUN HTML IN CODESPACES
+ npm i -g http-server
+ http-server
