@@ -9,6 +9,6 @@ DATABASES = {
     }
 }
 
-INSTALLED_APPS = ('orm')
+INSTALLED_APPS = ('orm', )
 
 SECRET_KEY = 'SECRET KEY for this Django Project'
