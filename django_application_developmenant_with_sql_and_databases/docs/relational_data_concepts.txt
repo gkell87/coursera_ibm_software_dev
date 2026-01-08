@@ -1,0 +1,76 @@
+Relational Data Concepts
+
+In this lab, you will apply the concepts that you learnt in this module to a relational database schema called Car Dealership, which is designed to keep track of automobile sales in a car dealership.
+
+Objectives:
+After completing this lab, you will be able to:
+1. Evaluate your knowledge of Relational Database Concepts and the Entity-Relationship (ER) Diagram
+2. Imporve your understanding of terms related to relational models like entity, attribute, and keys.
+  
+Concepts covered in the lab
+1. Entity: A person, place, object, or event about which data is stored (represented as a table in a database).
+2. Attribute: A property or characteristic of an entity (represented as a column in a table).
+3. Primary Key: A unique identifier for each row in a table.
+4. Foreign Key: A field in one table that refers to the primary key of another table, creating a relationship between them.
+5. Entity-Relationship (ER) Diagram: A diagram that shows entities (tables), attributes (columns), and the relationships between them.
+
+Exercise
+In this exercise, we will be working on a relational database schema called Car Dealership. A database has to be designed to keep track of automobile sales in a car dealership.
+
+Now let us go through some questions based on the above database schema of Car Dealership and relational instance of SALE:
+
+1. How many relations does the Car Dealership database schema contain?
+
+Hint
+A relation is also the mathematical term for a table.
+
+Answer
+The Car Dealership database schema contains the following 3 relations or tables: CAR, SALE, SALESPERSON.
+
+2. How many columns does the relation Car contain?
+
+Hint
+A relation is also the mathematical term for a table. A table is a combination of rows and columns. The columns are the attributes, or fields.
+
+Answer
+The relation Car contains the following 4 columns: Serial_no, Model, Manufacturer, Price.
+  
+3. How many rows does the relation Sale contain?
+
+Hint
+A relation is also the mathematical term for a table. A table is a combination of rows and columns. The rows are the tuples.
+
+Answer
+5
+
+4. Identify the attributes of the relation Salesperson.
+
+Hint
+A Relational Schema specifies the relation name and type of each of the columns, which are the attributes.
+
+Answer
+Salesperson_id, Name, Phone
+
+5. Identify which relations of the Car Dealership database have primary keys. Name the primary keys if exist.
+
+Hint
+A primary key is a column or group of columns that uniquely identify every row in a relation/table. A table cannot have more than one primary key. Symbol representing a primary key may look like:
+
+Answer
+The relations CAR and SALESPERSON have primary keys. Serial_no is the primary key of the relation CAR. Salesperson_id is the primary key of the relation SALESPERSON.
+
+6. Which table(s) in the Car Dealership database include foreign keys? Identify the foreign keys and describe the table and column they reference.
+
+Hint
+A foreign key is a column that establishes a relationship between two relations/tables. It acts as a cross-reference between two tables as it points to the primary key of another table. A table can have multiple foreign keys referencing primary keys of other tables. Symbol representing a foreign key may look like:
+
+Answer
+The relation SALE has foreign keys. Serial_no is a foreign key of the relation SALE which acts as a cross-reference between two relations CAR and SALE as it points to the primary key of the relation CAR. Salesperson_id is another foreign key of the relation SALE which acts as a cross-reference between two relations CAR and SALESPERSON as it points to the primary key of the relation SALESPERSON.
+
+Summary
+Congratulations!
+You have completed this lab where you have evaluated your knowledge and improved your understanding of key terms pertaining to relational models.
+  
+Author(s)
+Rav Ahuja
+Sandip Saha Joy
