@@ -1,4 +1,4 @@
-from django imoprt models
+from django import models
 
 # Test model
 class Test(models.Model):
