@@ -40,3 +40,14 @@ class Lesson(models.Model):
     title = models.CharField(max_length=200, default="title")
     course = models.ForeignKey(Course, null=True, on_delete=models.CASCADE)
     content = models.TextField()
+
+# Learner model
+class Learner(User):
+    STUDENT = 'student'
+    DEVELOPER = 'developer'
+    DATABASE_ADMIN = 'dba'
+    OCCUPATION_CHOICES = [
+        (STUDENT, 'Student'),
+        (DEVLOPER, 'Developer'),
+        (DATA_SCIENTIST, 'Data Scientist'),
+        (DATABASE_ADMIN, 'Database Admin')]
