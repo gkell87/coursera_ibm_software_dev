@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.timezone import now
 
 # User Model
-class User(model.Model):
+class User(models.Model):
     first_name = models.CharField(null = False, max_length = 30, default = 'John')
     last_name = models.CharField(null = False, max_length = 30, default = 'Doe')
     dob = models.DateField(null = True)
