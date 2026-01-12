@@ -14,7 +14,7 @@ class User(models.Model):
 # Instructor Model
 class Insructor(User):
     full_time = models.BooleanField(default = True)
-    total_learners = models.IntergerField()
+    total_learners = models.IntegerField()
 
     # Create a toString method for object string representation
     def __str__(self):
