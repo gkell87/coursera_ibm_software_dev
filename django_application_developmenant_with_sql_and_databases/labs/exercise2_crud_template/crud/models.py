@@ -12,7 +12,7 @@ class User(models.Model):
         return self.first_name + ' ' + self.last_name
 
 # Instructor Model
-class Insructor(User):
+class Instructor(User):
     full_time = models.BooleanField(default = True)
     total_learners = models.IntegerField()
 
