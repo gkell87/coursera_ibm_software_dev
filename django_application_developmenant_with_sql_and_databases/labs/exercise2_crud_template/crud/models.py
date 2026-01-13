@@ -27,13 +27,16 @@ class Instructor(User):
 class Course(models.Model):
     name = models.CharField(null=False, max_length=100, default='online course')
     description = models.CharField(max_length=500)
-    # Many-To-Many relationship with Instructor
+    # Many-To-Many relationship with Instructors
     instructors = models.ManyToManyField(Instructor)
-    
-    # Create a toString method for object string representation
+    # Many-To-Many relationship with Learner via Enrollment relationship
+    learners = models.ManyToManyField(Learner, through='Enrollment')
     def __str__(self):
         return "Name: " + self.name + "," + \
-            "Description: " + self.description
+                 "Description: " + self.description    
+    def __str__(self):
+        return "Name: " + self.name + "," + \
+                 "Description: " + self.description
 
 # Lesson
 class Lesson(models.Model):
@@ -45,13 +48,33 @@ class Lesson(models.Model):
 class Learner(User):
     STUDENT = 'student'
     DEVELOPER = 'developer'
+    DATA_SCIENTIST = 'data_scientist'
     DATABASE_ADMIN = 'dba'
     OCCUPATION_CHOICES = [
         (STUDENT, 'Student'),
         (DEVELOPER, 'Developer'),
         (DATA_SCIENTIST, 'Data Scientist'),
-        (DATABASE_ADMIN, 'Database Admin')]
+        (DATABASE_ADMIN, 'Database Admin')
+    ]
+    # Occupation Char field with defined enumeration choices
+    occupation = models.CharField(
+        null=False,
+        max_length=20,
+        choices=OCCUPATION_CHOICES,
+        default=STUDENT
+    )
+    # Social link URL field
+    social_link = models.URLField(max_length=200)
+    
+    # Create a toString method for object string representation
+    def __str__(self):
+        return "First name: " + self.first_name + ", " + \
+                "Last name: " + self.last_name + ", " \
+                "Date of Birth: " + str(self.dob) + ", " + \
+                "Occupation: " + self.occupation + ", " + \
+                "Social Link: " + self.social_link
 
+# Enrollment model as a lookup table with additional enrollment info
 class Enrollment(models.Model):
     AUDIT = 'audit'
     HONOR = 'honor'
