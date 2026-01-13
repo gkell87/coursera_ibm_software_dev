@@ -89,4 +89,4 @@ class Enrollment(models.Model):
     # Enrollment date
     date_enrolled = models.DateField(default=now)
     # Enrollment mode
-    mode = models.CharField(max_length=5, choices=COURSE_MODES, default=AUDIT
+    mode = models.CharField(max_length=5, choices=COURSE_MODES, default=AUDIT)
