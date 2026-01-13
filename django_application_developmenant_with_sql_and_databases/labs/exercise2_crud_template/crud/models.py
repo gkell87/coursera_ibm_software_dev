@@ -48,7 +48,7 @@ class Learner(User):
     DATABASE_ADMIN = 'dba'
     OCCUPATION_CHOICES = [
         (STUDENT, 'Student'),
-        (DEVLOPER, 'Developer'),
+        (DEVELOPER, 'Developer'),
         (DATA_SCIENTIST, 'Data Scientist'),
         (DATABASE_ADMIN, 'Database Admin')]
 
