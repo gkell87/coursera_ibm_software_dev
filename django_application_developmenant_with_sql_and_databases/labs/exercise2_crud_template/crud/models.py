@@ -23,6 +23,21 @@ class Instructor(User):
                "Is full time: " + str(self.full_time) + ", " + \
                "Total Learners: " + str(self.total_learners)
 
+# Course model
+class Course(models.Model):
+    name = models.CharField(null=False, max_length=100, default='online course')
+    description = models.CharField(max_length=500)
+    # Many-To-Many relationship with Instructors
+    instructors = models.ManyToManyField(Instructor)
+    # Many-To-Many relationship with Learner via Enrollment relationship
+    learners = models.ManyToManyField(Learner, through='Enrollment')
+    def __str__(self):
+        return "Name: " + self.name + "," + \
+                 "Description: " + self.description    
+    def __str__(self):
+        return "Name: " + self.name + "," + \
+                 "Description: " + self.description               
+
 
 # Lesson
 class Lesson(models.Model):
@@ -59,21 +74,6 @@ class Learner(User):
                 "Date of Birth: " + str(self.dob) + ", " + \
                 "Occupation: " + self.occupation + ", " + \
                 "Social Link: " + self.social_link
-
-# Course model
-class Course(models.Model):
-    name = models.CharField(null=False, max_length=100, default='online course')
-    description = models.CharField(max_length=500)
-    # Many-To-Many relationship with Instructors
-    instructors = models.ManyToManyField(Instructor)
-    # Many-To-Many relationship with Learner via Enrollment relationship
-    learners = models.ManyToManyField(Learner, through='Enrollment')
-    def __str__(self):
-        return "Name: " + self.name + "," + \
-                 "Description: " + self.description    
-    def __str__(self):
-        return "Name: " + self.name + "," + \
-                 "Description: " + self.description
 
 # Enrollment model as a lookup table with additional enrollment info
 class Enrollment(models.Model):
