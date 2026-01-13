@@ -80,16 +80,13 @@ class Enrollment(models.Model):
     HONOR = 'honor'
     COURSE_MODES = [
         (AUDIT, 'Audit'),
-        (HONOR, 'Honor')]
-
+        (HONOR, 'Honor'),
+    ]
     # Add a learner foreign key
-    lerner = models.ForeignKey(Learner, on_delete = models.CASCADE)
-
+    learner = models.ForeignKey(Learner, on_delete=models.CASCADE)
     # Add a course foreign key
-    course = models.ForeignKey(Course, on_delete = models.CASCADE)
-
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
     # Enrollment date
-    date_enorlled = models.DateField(default = now)
-
+    date_enrolled = models.DateField(default=now)
     # Enrollment mode
-    mode = models.CharField(max_length = 5, choices = COURSE_MODES, default = AUDIT)
+    mode = models.CharField(max_length=5, choices=COURSE_MODES, default=AUDIT
