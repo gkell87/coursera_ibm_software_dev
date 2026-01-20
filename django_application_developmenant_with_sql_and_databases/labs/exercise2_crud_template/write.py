@@ -27,3 +27,35 @@ def write_instructors():
     instructor_peter = Instructor(first_name='Peter', last_name='Chen', dob=date(1982, 5, 2), full_time=True, total_learners=2002)
     instructor_peter.save()
     print("Instructor objects all saved... ")
+
+def write_courses():
+    course_cloud_app = Course(name = 'Cloud app with Database',
+    description = 'Dev and deploy on cloulde')
+
+    course_cloud_app.save()
+
+    course_python = Course(name = 'Intro to Python',
+    description = 'Learn core concepts of python')
+
+    course_python.save()
+
+    print('Course Objects Saved...')
+
+def write_lessons():
+    # Add Lessons
+    lesson_1 = Lesson(title = 'Lesson 1', content = 'Object Mapping')
+    lesson_1.save()
+
+    lesson_2 = Lesson(title = 'Lesson 2', content = 'Django')
+    lesson_2.save()
+    print('lessons saved...')
+
+def clean_data():
+    # delete all and start from fresh
+    Enrollment.objects.all().delete()
+    User.objects.all().delete()
+    Learner.objects.all().delete()
+    Instructor.objects.all().delete()
+    Course.objects.all().delete()
+    Lesson.objects.all().delete()
+
