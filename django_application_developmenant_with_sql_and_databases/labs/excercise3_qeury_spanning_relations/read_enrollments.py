@@ -16,11 +16,11 @@ print(learner_david)
 
 print("2. Get learner `David` information from user")
 user_david = User.objects.get(first_name="David")
-print(user_david)
+print(user_david.learner)
 
 print("3. Get all learners for `Introduction to Python` course")
 course = Course.objects.get(name='Introduction to Python')
-learners = Learners.objects.filer(course)
+learners = course.learners.all()
 print(learners)
 
 print("4. Check the occupation list for the courses taught by instructor `Yan`")
