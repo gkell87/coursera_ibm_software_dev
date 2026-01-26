@@ -28,7 +28,7 @@ print('2. Get the instructors of Could app dev course')
 print(instructors)
 
 print('\n')
-courses = Course.objecs.filter(instructors__first_name = 'Yan')
+courses = Course.objects.filter(instructors__first_name = 'Yan')
 ouccpation_list = set()
 for course in courses:
     for learner in course.learners.all():
