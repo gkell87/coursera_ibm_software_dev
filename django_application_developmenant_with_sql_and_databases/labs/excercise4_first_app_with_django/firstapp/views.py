@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def get_daate(request):
+def index(request):
     # create a simple html page as a string
     template = '<html>' \
     'this is your first view' \
@@ -15,7 +15,6 @@ def get_daate(request):
 def get_date(request):
     today = date.today()
     template = "<html>" \
-    "today's data {} " \
-    "</html>".format(today)
-
-    return HttpResponse(content = template)
+                "Today's date is {}" \
+               "</html>".format(today)
+    return HttpResponse(content = template)  
