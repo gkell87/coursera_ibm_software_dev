@@ -24,3 +24,13 @@ python3 manage.py migrate
 start dev server:
 
 python3 manage.py runserver
+
+Containerize the app using docker
+Create a requirements.txt file
+Create a Dockerfile which contains instructions on how to build a Docker image
+Run docker compose up to create a container image, and run it
+Commit and push the image to a remote repo so others can run it exactly as you’ve configured
+
+after code is added to docker file run this command to build
+docker build . -t my-django-app:latest && docker run -e PYTHONUNBUFFERED=1 -p  8000:8000 my-django-app 
+
