@@ -1,0 +1,5 @@
+pip install virtualenv
+virtualenv djangoenv
+source djangoenv/bin/activate
+pip install django==4.2.4 psycopg2-binary==2.9.7
+
