@@ -1,13 +1,26 @@
 install relevent libraries
-- pip install --upgrade distro-info
-- pip3 install --upgrade pip==23.2.1
-- pip install virtualenv
-- virtualenv djangoenv
-- source djangoenv/bin/activate
-- pip install Django
+pip install --upgrade distro-info
+pip3 install --upgrade pip==23.2.1
+pip install virtualenv
+virtualenv djangoenv
+source djangoenv/bin/activate
+pip install Django
 
 
 Create first project by running
-- django-admin startproject firstproject
--- Must provide project with name
+django-admin startproject firstproject
+- Must provide project with name
 
+create a app call fisrtapp
+python3 manage.py startapp firstapp
+
+Before starting the app run the following:
+to create migration:
+python3 manage.py makemigrations
+
+run the migration:
+python3 manage.py migrate
+
+start dev server:
+
+python3 manage.py runserver
