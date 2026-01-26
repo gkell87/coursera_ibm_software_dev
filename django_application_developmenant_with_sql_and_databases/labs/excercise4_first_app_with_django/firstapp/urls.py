@@ -1,5 +1,7 @@
-from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
+from . import views
 
-urlpatterns = [# create path object defining the URL patters
-                path(route = '', veiw = veiws.index, name = 'index')]
+urlpatterns = [
+    # Create a path object defining the URL pattern to the index view
+    path(route='', view=views.index, name='index'),
+]
