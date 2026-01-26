@@ -1,6 +1,6 @@
 # import libraries from django
 from django.shortcuts import render
-from dhango.http import HttpResponse
+from django.http import HttpResponse
 
 
 def index(request):
@@ -9,4 +9,4 @@ def index(request):
     'this is your first view' \
     '</html>'
 
-    returnHttpResponse(content = template)
+    return HttpResponse(content = template)
