@@ -29,7 +29,7 @@ print(instructors)
 
 print('\n')
 courses = Course.objects.filter(instructors__first_name = 'Yan')
-ouccpation_list = set()
+occupation_list = set()
 for course in courses:
     for learner in course.learners.all():
         occupation_list.add(learner.occupation)
