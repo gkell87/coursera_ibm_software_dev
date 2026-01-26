@@ -34,7 +34,7 @@ print(occupation_list)
 print("5. Check which courses developers are enrolled in Aug, 2020")  
 enrollments = Enrollment.objects.filter(date_enrolled__month=8,
                                             date_enrolled__year=2020,
-                                            occupation = 'developer')
+                                            learner__occupation = 'developer')
 courses_for_developers = set()
 for enrollment in enrollments:
     course = enrollment.course
