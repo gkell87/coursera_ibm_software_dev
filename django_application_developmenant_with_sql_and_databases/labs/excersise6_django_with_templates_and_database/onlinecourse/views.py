@@ -28,7 +28,7 @@ def enroll(request, course_id):
         course.total_enrollment += 1
         course.save()
         # Return a HTTP response redirecting user to course list view
-        return HttpResponseRedirect(reverse(viewname='onlinecourse:popular_course_details', args=(course.id)))
+        return HttpResponseRedirect(reverse(viewname='onlinecourse:popular_course_list'))
 
 def course_details(request, course_id):
     context = {}
