@@ -35,10 +35,10 @@ def course_details(request, course_id):
     if request.method == 'GET':
         try:
             course = Course.objects.get(pk=course_id)
-            conext['course'] = course
-            # User Render() method got generate html page
-            # Template and Context
-            return render(request, 'online/course_detail.html', context)
+            context['course'] = course
+            # Use render() method to generate HTML page by combining
+            # template and context
+            return render(request, 'onlinecourse/course_detail.html', context)
         except Course.DoesNotExist:
-            # If couse does not exist, return 404 error
-            raise (Http404)('No course matches ID.')       
+            # If course does not exist, throw a Http404 error
+            raise Http404("No course matches the given id.")     
