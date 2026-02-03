@@ -30,4 +30,15 @@ def enroll(request, course_id):
         # Return a HTTP response redirecting user to course list view
         return HttpResponseRedirect(reverse(viewname='onlinecourse:popular_course_list'))
 
-        
+def course_details(request, course_id):
+    context = {}
+    if request.method == 'GET':
+        try:
+            course = Course.objects.get(pk=course_id)
+            conext['course'] = course
+            # User Render() method got generate html page
+            # Template and Context
+            return render(request, 'online/course_detail.html', context)
+        except Course.DoesNotExist:
+            # If couse does not exist, return 404 error
+            raise (Http404)('No course matches ID.')       
